@@ -18,7 +18,7 @@ class UserController extends Controller
     }
 
     public function add(Request $r) {
-        $user = $r->only('name', 'email', 'password');
+        $user = $r->only(['name', 'email', 'password']);
         $newUser = User::create($user);
         return $newUser;
     }
