@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class UserController extends Controller
 
     public function findOne(Request $r) {
         $user = User::find($r->id);
-        return $user;
+        return $user->address;
     }
 
     public function add(Request $r) {
@@ -22,4 +23,5 @@ class UserController extends Controller
         $newUser = User::create($user);
         return $newUser;
     }
+
 }
