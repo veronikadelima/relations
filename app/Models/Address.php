@@ -10,4 +10,9 @@ class Address extends Model
     public $table = 'addresses';
     protected $fillable = ['address'];
     use HasFactory;
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
