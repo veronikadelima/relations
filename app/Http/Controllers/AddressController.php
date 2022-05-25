@@ -18,8 +18,8 @@ class AddressController extends Controller
     }
 
     public function add(Request $r) {
-        $address = $r->only(['address']);
-        $newAddress = Address::create($address);
+        $datas = $r->only(['address']);
+        $newAddress = Address::create($datas);
         return $newAddress;
     }
 }
